@@ -32,8 +32,13 @@ footer {
 
 #portal_button {
 	position: fixed;
-	right: 30px;
-	top: 10px;
+	right: 169px;
+	top: 3px;
+}
+#portal_button_text {
+	position: fixed;
+	right: 10px;
+	top: -28px;
 }
 
 a {
