@@ -63,20 +63,5 @@ let currentStories = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     currentStories.forEach(story => displayItem(story));
-        
-       // let itemHTML = `
-         //   <div class="feed-item">
-           //     <h2><a href="${feedItem.linkUrl}" target="_blank">${feedItem.Title}</a></h2>
-             //   <p>${feedItem.Body}</p>
-              //  <a href="${feedItem.linkUrl}" target="_blank">
-               //     <img src="${feedItem.imageUrl}" alt="${feedItem.Title}" style="max-width: 20%; height: 20%;">
-             //   </a>
-         //   </div>
-     //   `;
-        
-      //  newsfeedElement.innerHTML += itemHTML;
-    
 
- //   currentStories.forEach(function(item) {
-    //    displayItem(item);
     });
