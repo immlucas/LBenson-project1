@@ -9,9 +9,10 @@ header {
 	justify-content: space-between;
 	align-items: center;
 
-	background-color: red;
+	background-color: rgb(142, 29, 29);
 	font-size: 30px;
 	color: white;
+	font-family: fantasy;
 }
 
 main {
@@ -25,9 +26,10 @@ footer {
 	left: 0px;
   bottom: 0px;
 	width: 110%;
-	background-color: red;
+	background-color: rgb(142, 29, 29);
 	text-align: center;
 	font-size: 20px;
+	font-family: 'Times New Roman', Times, serif;
 }
 
 #portal_button {
@@ -58,3 +60,18 @@ a {
 	min-width: 600px;
 }
 
+.feedImage {
+	max-width: 150px;
+	max-height: 150px;
+}
+
+#photo {
+	float: left;
+	max-width: 200px;
+	max-height: 200px;
+}
+
+h2{
+	color: rgb(255, 0, 0);
+	text-decoration-line: rgb(255, 0, 0);
+}

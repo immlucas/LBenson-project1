@@ -1,3 +1,3 @@
-function goToLocation(url) {
-    window.location.href = url;
+function goToLocation(location) {
+    window.location = location;
 }

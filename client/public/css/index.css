@@ -21,7 +21,7 @@ body {
 .menu_button {
 	background-color: rgba(255, 0, 0, 0.5);
     font-size: 28px;
-    color: white;
+    color: whitesmoke;
     cursor: pointer;
     text-align: center;
     user-select: none;
