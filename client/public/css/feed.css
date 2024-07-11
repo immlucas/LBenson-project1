@@ -21,9 +21,9 @@ main {
 }
 
 footer {
-	position: absolute;
-	left: -100px;
-  bottom: -100px;
+	position: fixed;
+	left: 0px;
+  bottom: 0px;
 	width: 110%;
 	background-color: red;
 	text-align: center;
@@ -58,34 +58,3 @@ a {
 	min-width: 600px;
 }
 
-.feedImage {
-	max-width: 150px;
-	max-height: 150px;
-}
-
-.image-campus {
-    width: 250px;
-    height: 250px;
-    background-image: url('images/campus.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.image-hancock {
-    width: 250px;
-    height: 250px;
-    background-image: url('images/hancock.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.image-news-pic {
-    width: 250px;
-    height: 250px;
-    background-image: url('images/news_pic.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}

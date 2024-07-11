@@ -14,21 +14,21 @@ let currentStories = [];
         Title: 'Marist Story 1',
         Body: 'This is the body of the story, it may be longer.',
         linkUrl: ' ',
-        imageUrl: 'images-campus'
+        imageUrl: 'images/marist3.jpg'
     });
 
     currentStories.push({
         Title: 'Marist Story 2',
         Body: 'This is the body of the story, it may be longer.',
         linkUrl: ' ',
-        imageUrl: 'image-news-pic'
+        imageUrl: 'images/news_picnew.jpg'
     });
 
     currentStories.push({
         Title: 'Marist Story 3',
         Body: 'This is the body of the story, it may be longer.',
         linkUrl: ' ',
-        imageUrl: 'images-hancock'
+        imageUrl: 'images/hancock.jpeg'
     });
 
     function displayItem(feedItem) {
@@ -37,12 +37,10 @@ let currentStories = [];
         let itemElement = document.createElement('div');
     itemElement.className = 'news-item';
 
-    // Create and append the title
     let titleElement = document.createElement('h2');
     titleElement.textContent = feedItem.Title;
     itemElement.appendChild(titleElement);
 
-    // Create and append the body
     let bodyElement = document.createElement('p');
     bodyElement.textContent = feedItem.Body;
     itemElement.appendChild(bodyElement);
