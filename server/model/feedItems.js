@@ -8,4 +8,3 @@ function feedItem(title, body, linkUrl, imageUrl) {
 exports.makeFeedItem = function(title, body, linkUrl, imageUrl) {
     return new feedItem(title, body, linkUrl, imageUrl);
 };
-

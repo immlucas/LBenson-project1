@@ -17,6 +17,7 @@ const currentStories = require('./controller/feedController');
 app.route('/api/feedItem')
     .get(currentStories.getFeedItem)
     .post(currentStories.saveFeedItem);
+    
 
 app.route('/api/feedItem/:feedItemId')
     .get(currentStories.getSingleFeedItem)

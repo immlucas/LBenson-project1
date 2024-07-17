@@ -1,3 +1,4 @@
+const feedAllItem = require('../model/feedItems'); // Import the feedItem module
 
 function feedItem(title, body, linkUrl, imageUrl) {
     this.Title = title;
@@ -18,45 +19,44 @@ currentStories.push(feedItem3)
 currentStories.push(feedItem4)
 
 exports.getFeedItem = function(req, res) {
-	res.setHeader('Content-Type', 'application/json');
-	res.send(currentStories);
-}
+    res.setHeader('Content-Type', 'application/json');
+    res.send(currentStories);
+};
+
 
 exports.saveFeedItem = function(req, res) {
-	let newFeedItem = user.createFeedItem(req.body.Title, req.body.Body, req.body.linkUrl, req.body.imageUrl);
-	currentStories.push(newFeedItem);
-	res.setHeader('Content-Type', 'application/json');
-	res.send(currentStories);
-}
+    let newFeedItem = feedAllItem.makeFeedItem(req.body.Title, req.body.Body, req.body.linkUrl, req.body.imageUrl);
+    currentStories.push(newFeedItem);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(currentStories);
+};
 
-exports.getFeedItem = function(req, res) {
-	res.setHeader('Content-Type', 'application/json');
-  res.send(currentStories[req.params.feedItemId]);
-}
+
+exports.getSingleFeedItem = function(req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(currentStories[req.params.feedItemId]);
+};
 
 exports.deleteFeedItem = function(req, res) {
-	users.splice(req.params.feedItemId, 1);
-	res.setHeader('Content-Type', 'application/json');
-	res.send(currentStories);
-}
+    currentStories.splice(req.params.feedItemId, 1);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(currentStories);
+};
 
 exports.updateFeedItem = function(req, res) {
-	// get the existing user from the array
-	var updatedFeedItem = currentStories[req.params.feedItemId];
+    // get the existing feed item from the array
+    var updatedFeedItem = currentStories[req.params.feedItemId];
 
-	console.log(req.body.Title);
-	if(req.body.Title)
+    if (req.body.Title)
+        updatedFeedItem.Title = req.body.Title;
+    if (req.body.Body)
+        updatedFeedItem.Body = req.body.Body;
+    if (req.body.linkUrl)
+        updatedFeedItem.linkUrl = req.body.linkUrl;
+    if (req.body.imageUrl)
+        updatedFeedItem.imageUrl = req.body.imageUrl;
+    currentStories[req.params.feedItemId] = updatedFeedItem;
 
-		updatedFeedItem.Title = req.body.Title;
-	if(req.body.Body)
-		updatedFeedItem.Body = req.body.Body;
-	if(req.body.linkUrl)
-		updatedFeedItem.linkUrl = req.body.linkUrl;
-	if(req.body.imageUrl)
-		updatedFeedItem.imageUrl = req.body.imageUrl;
-
-	users[req.params.feedItemId] = updatedFeedItem;
-
-	res.setHeader('Content-Type', 'application/json');
-	res.send(currentStories[req.params.feedItemId]);
-}
+    res.setHeader('Content-Type', 'application/json');
+    res.send(currentStories[req.params.feedItemId]);
+};
