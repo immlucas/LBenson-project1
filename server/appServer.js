@@ -1,18 +1,21 @@
-const express = require('express')
+const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
+
 app.use(express.static('client/public'));
+app.use(bodyParser.json({ type: 'application/json' }));
 
-//view / webpage endpoints
-app.get('/', function(req, res) {
-    res.sendFile('index.html', {root: './client/views'})
-})
+const currentStories = require('./controller/feedController');
 
-app.get('/feed', function(req, res) {
-    res.sendFile('feed.html', {root: './client/views'})
-})
-//API endpoints
+app.route('/api/feedItem')
+    .get(currentStories.getFeedItem)
+    .post(currentStories.saveFeedItem);
 
-const feedRoutes = require("./Routes/feedRoutes")
-app.use("/api/users", feedRoutes)
+app.route('/api/feedItem/:feedItemId')
+    .get(currentStories.getSingleFeedItem)
+    .delete(currentStories.deleteFeedItem)
+    .patch(currentStories.updateFeedItem);
 
-app.listen(1337, () => console.log('Listening on port 1337.'))
+app.listen(1337, function () {
+    console.log('Listening on port 1337!');
+});
