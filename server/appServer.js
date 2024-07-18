@@ -13,7 +13,7 @@ app.use(express.static('client/public'));
 app.use(bodyParser.json({ type: 'application/json' }));
 
 const currentStories = require('./controller/feedController');
-
+//more http methonds, gets, posts, deletes and patches items within the feed
 app.route('/api/feedItem')
     .get(currentStories.getFeedItem)
     .post(currentStories.saveFeedItem);

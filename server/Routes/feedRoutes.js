@@ -3,7 +3,7 @@ const router = express.Router( );
 
 let feedController = require("../controller/feedController");
 let feedItem = require("../model/feedItems");
-
+//all of the http methods
 router.route("/")
     .get(feedItem.getcurrentStories)
     .post(feedController.saveFeedAllItem)
